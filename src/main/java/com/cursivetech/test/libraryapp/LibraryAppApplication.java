@@ -15,6 +15,7 @@ public class LibraryAppApplication {
 		BookService bookService = applicationContext.getBean(BookService.class);;
 		
 		try {
+			bookService.initBooks();
 			bookService.sortBooks();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
