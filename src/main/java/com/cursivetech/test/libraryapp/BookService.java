@@ -19,7 +19,10 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Java");
 		// Set Book date to 5th Nov 2020
-		// book.setReleaseDate();
+		String dateInString = "05 Nov 2020";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH);
+		LocalDate dateTime = LocalDate.parse(dateInString, formatter);	
+		book.setReleaseDate(dateTime);
 		this.books.add(book);
 		
 		// Book 2
@@ -27,7 +30,10 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Angular");
 		// Set Book date to 2rd oct 2012
-		// book.setReleaseDate();
+		String dateInString = "02 Oct 2012";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH);
+		LocalDate dateTime = LocalDate.parse(dateInString, formatter);
+		book.setReleaseDate(dateTime);
 		this.books.add(book);
 		
 		// Book 3
@@ -35,7 +41,10 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Spring");
 		// Set Book date to 21st Nov 2021
-		// book.setReleaseDate();
+		String dateInString = "21 Nov 2021";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH);
+		LocalDate dateTime = LocalDate.parse(dateInString, formatter);
+		book.setReleaseDate(dateTime);
 		this.books.add(book);
 		
 		System.out.println(this.books.size() + " Books in Library");
@@ -68,7 +77,20 @@ public class BookService {
 	public Book purgeBooks(Book book1, Book book2) {
 		Book purgedBook = null;
 		// Check if book 1 and book 2 is same if yes then purge the book and return purged object
-		
+		if(book1.getTitle() == book2.getTitle())
+		{
+			Date date1 = book1.getReleaseDate();
+			Date date2 = book2.getReleaseDate();
+			if( date1.after(date2) && date1.equals(date2)){
+				purgedBook.setIsbn(book1.getIsbn());
+				purgedBook.setTitle(book1.getTitle());
+				purgedBook.setReleaseDate(book1.getReleaseDate());
+			}else{
+				purgedBook.setIsbn(book2.getIsbn());
+				purgedBook.setTitle(book2.getTitle());
+				purgedBook.setReleaseDate(book2.getReleaseDate());
+			}
+		}
 		
 		if(purgedBook == null) {
 			System.out.println("Unable to purge books");
