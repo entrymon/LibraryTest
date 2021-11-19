@@ -62,7 +62,13 @@ public class BookService {
 		}
 		
 		// Sort Logic
-		
+		List<?> sortedList = new ArrayList<>(books);
+		Collections.sort(sortedList , new Comparator<Score>() {
+
+			public Date compare(Book o1, Book o2) {
+				return o2.getReleaseDate().before(o1.getReleaseDate());
+			}
+		});
 		
 		// After Sort
 		booksIterator = this.books.iterator();
