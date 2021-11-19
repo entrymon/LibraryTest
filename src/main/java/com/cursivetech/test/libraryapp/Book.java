@@ -3,6 +3,7 @@ package com.cursivetech.test.libraryapp;
 import java.util.Date;
 
 public class Book {
+	private int bk;
 	
 	private int isbn;
 	
