@@ -42,7 +42,7 @@ public class BookService {
 		
 	}
 	
-	public void sortBooks() {
+	public void sortBooks(int count, String name) {
 		System.out.println("Inside Sort books");
 		Book book;
 		Iterator booksIterator = this.books.iterator();
@@ -53,6 +53,16 @@ public class BookService {
 		}
 		
 		// Sort Logic
+		Book temp;
+		for(int i =0; i<count; i++){
+		for(int j=0;j<count -i; j++){
+			if(books[j].title > books[j+1].title){
+				temp= books[j];
+				books[j] = books[j+1];
+				books[j+1] = temp;
+			}
+		}
+		}
 		
 		
 		// After Sort
