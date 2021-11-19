@@ -19,7 +19,7 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Java");
 		// Set Book date to 5th Nov 2020
-		// book.setReleaseDate();
+		book.setReleaseDate();
 		this.books.add(book);
 		
 		// Book 2
@@ -27,7 +27,7 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Angular");
 		// Set Book date to 2rd oct 2012
-		// book.setReleaseDate();
+		book.setReleaseDate();
 		this.books.add(book);
 		
 		// Book 3
@@ -35,7 +35,7 @@ public class BookService {
 		book.setIsbn(123);
 		book.setTitle("Learn Spring");
 		// Set Book date to 21st Nov 2021
-		// book.setReleaseDate();
+		book.setReleaseDate();
 		this.books.add(book);
 		
 		System.out.println(this.books.size() + " Books in Library");
@@ -53,7 +53,7 @@ public class BookService {
 		}
 		
 		// Sort Logic
-		
+		book.sort();
 		
 		// After Sort
 		booksIterator = this.books.iterator();
