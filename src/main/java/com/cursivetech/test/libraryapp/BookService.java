@@ -64,4 +64,19 @@ public class BookService {
 		}
 		
 	}
+	
+	public Book purgeBooks(Book book1, Book book2) {
+		Book purgedBook = null;
+		// Check if book 1 and book 2 is same if yes then purge the book and return purged object
+		
+		
+		if(purgedBook == null) {
+			System.out.println("Unable to purge books");
+		}
+		else {
+			System.out.println("Purged book with release date " + purgedBook.getReleaseDate());
+		}
+		return purgedBook;
+		
+	}
 }

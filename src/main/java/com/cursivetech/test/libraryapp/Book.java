@@ -9,6 +9,7 @@ public class Book {
 	private String title;
 	
 	private Date releaseDate;
+	
 
 	public int getIsbn() {
 		return isbn;
